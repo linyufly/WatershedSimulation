@@ -52,7 +52,7 @@ const int dire[6][3] = {{-1, 0, 0}, {1, 0, 0},
 			{0, 0, -1}, {0, 0, 1}};
 const int numOfNeighbors = 6;
 
-const int laplacianDelta = 4;
+const int laplacianDelta = 8;
 
 double ***ftleValues;
 double spacing[3];
@@ -72,7 +72,7 @@ bool Outside(int x, int y, int z) {
 
 void LoadGrid() {
 	vtkSmartPointer<vtkStructuredPointsReader> reader = vtkSmartPointer<vtkStructuredPointsReader>::New();
-	reader->SetFileName("../VincentSoille/output.vtk");
+	reader->SetFileName("../VincentSoille/output_200.vtk");
 	reader->Update();
 
 	vtkStructuredPoints *structPoints = reader->GetOutput();
